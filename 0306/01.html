@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome ~~ </h1>
+    <h1 id="dynamicText">Welcome ~~</h1>
+    <script>
+        const messages = ["Welcome ~~", "Hello World!", "Enjoy your stay!", "Have a great day!"];
+        let index = 0;
+
+        function updateText() {
+            const h1 = document.getElementById("dynamicText");
+            h1.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        }
+
+        setInterval(updateText, 3000);
+    </script>
 </body>
 </html>
