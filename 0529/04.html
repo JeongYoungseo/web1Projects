@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let img
+        function changeImage(){
+            img = document.getElementById("img1");
+            img.src ="imgs/rgb.jpg"
+            img.style.width = "600px";
+        }
+        function reset(){
+            img.src = "";
+            img.style.width = "0px";
+        }
+        function selectImage(){
+            img = document.getElementById("img1");
+            let select = document.querySelector("select");
+            img.src = select.value;
+            img.style.width = "400px";
+        }
+
+        function cheerUp(){
+            // 사용자 정의 속성을 body 요소 객체에 설정
+            document.body.setAttribute("data-cheerUp", "힘힘!");
+            alert(document.body.getAttribute("data-cheerUp"));
+        }
+
+        function callSetClock(){
+            clock = document.querySelector("h1");
+            setClock();
+            // setInterval 함수는 지정된 시간 간격(밀리초)마다 지정된 함수를 호출
+            setInterval(setClock,1000); 
+       
+        }
+
+        function setClock(){
+            let now = new Date();
+            clock.innerHTML = now.toString();
+        }
+
+    </script>
+</head>
+<body onload="callSetClock();">
+    <hr>
+    <button onclick="changeImage()">지브리</button>
+    <button onclick="reset()">Reset</button>
+    <button onclick="cheerUp()">힘힘</button>
+    <hr>
+    <br>
+    <select onchange="selectImage()">
+        <option value="imgs/images.jpg">토토로</option>
+        <option value="imgs/rgb.jpg">하울</option>
+        <option value="imgs/다운로드 (1).jpg">원령공주</option>
+        <option value="imgs/다운로드.jpg">센치히로</option>
+    </select>
+    <hr>
+    <img id="img1">
+    <hr>
+    <h1></h1>
+    <hr>
+</body>
+</html>
