@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function buttonClick(){
+            alert("click");
+        }
+    function imageOver(){
+        let img = document.querySelector("img");
+        img.onmouseover = function() {
+            img.src = "imgs/다운로드.jpg";
+        };
+        img.onmouseout = function() {
+            img.src = "imgs/다운로드 (1).jpg";
+        };
+    }
+    function overImage(img) {
+        img.src = "imgs/rgb.jpg";
+    }
+     function outImage(img) {
+        img.src = "imgs/다운로드.jpg";
+    }
+    function overImageId() {
+        let img = document.getElementById("img2");
+        img.src = "imgs/rgb.jpg";
+    }
+     function outImageId() {
+        let img = document.getElementById("img2");
+        img.src = "imgs/images.jpg";
+    }
+    </script>
+</head>
+<body onload="imageOver()">
+    <button onclick="buttonClick()">버튼</button>
+    <img src="imgs/rgb.jpg" onmouseover="this.scr='imgs/다운로드 (1).jpg'" onmouseout="this.scr='imgs/images.jpg'">
+    <br><br>
+    <img src="imgs/다운로드 (1).jpg" onmouseover="overImage(this)" onmouseout="outImage(this)">
+    <br><br>
+    <img src="imgs/다운로드.jpg" onmouseover="overImageId()" onmouseout="outImageId()" id="img2">
+</body>
+</html>
