@@ -31,10 +31,17 @@
         let img = document.getElementById("img2");
         img.src = "imgs/images.jpg";
     }
+    
+    function star(btn){
+        btn.textContent + "★";
+     }
     </script>
 </head>
 <body onload="imageOver()">
+    <button onclick="star(this)">버튼 - </button>
+    <br><br>
     <button onclick="buttonClick()">버튼</button>
+    <br><br>
     <img src="imgs/rgb.jpg" onmouseover="this.scr='imgs/다운로드 (1).jpg'" onmouseout="this.scr='imgs/images.jpg'">
     <br><br>
     <img src="imgs/다운로드 (1).jpg" onmouseover="overImage(this)" onmouseout="outImage(this)">
